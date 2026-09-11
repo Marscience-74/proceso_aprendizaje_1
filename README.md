@@ -6,7 +6,7 @@
 ## Checklist de entrega
 
 - [X] Mariano
-- [ ] Leonardo
+- [X] Leonardo
 - [ ] Eduardo
 - [ ] Deiner
 
