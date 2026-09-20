@@ -5,8 +5,8 @@
 
 ## Checklist de entrega
 
-- [X] Mariano
-- [X] Leonardo
+- [x] Mariano
+- [x] Leonardo
 - [ ] Eduardo
 - [ ] Deiner
 
