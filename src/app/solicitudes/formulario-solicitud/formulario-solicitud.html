@@ -1,0 +1,46 @@
+<form [formGroup]="formSolicitud" (ngSubmit)="onSubmit()">
+
+  <label for="dni">DNI</label>
+  <input id="dni" type="text" formControlName="dni">
+  <div *ngIf="formSolicitud.get('dni')?.invalid && formSolicitud.get('dni')?.touched">
+    <small *ngIf="formSolicitud.get('dni')?.errors?.['required']">El DNI es obligatorio.</small>
+    <small *ngIf="formSolicitud.get('dni')?.errors?.['pattern']">El DNI debe tener exactamente 8 dígitos.</small>
+  </div>
+
+  <label for="nombre">Nombre completo</label>
+  <input id="nombre" type="text" formControlName="nombre">
+  <div *ngIf="formSolicitud.get('nombre')?.invalid && formSolicitud.get('nombre')?.touched">
+    <small *ngIf="formSolicitud.get('nombre')?.errors?.['required']">El nombre es obligatorio.</small>
+    <small *ngIf="formSolicitud.get('nombre')?.errors?.['pattern']">Solo se permiten letras y espacios.</small>
+  </div>
+
+  <label for="correo">Correo</label>
+  <input id="correo" type="email" formControlName="correo">
+  <div *ngIf="formSolicitud.get('correo')?.invalid && formSolicitud.get('correo')?.touched">
+    <small *ngIf="formSolicitud.get('correo')?.errors?.['required']">El correo es obligatorio.</small>
+    <small *ngIf="formSolicitud.get('correo')?.errors?.['email']">Formato de correo inválido.</small>
+  </div>
+
+  <label for="carrera">Carrera</label>
+  <select id="carrera" formControlName="carrera">
+    <option value="">Seleccione una carrera</option>
+    <option value="ingenieria-software">Ingeniería de Software</option>
+    <option value="ciencia-computacion">Ciencia de la Computación</option>
+  </select>
+
+  <label for="curso">Curso</label>
+  <select id="curso" formControlName="curso">
+    <option value="">Seleccione un curso</option>
+    <option value="programacion-web-2">Programación Web II</option>
+  </select>
+
+  <label for="horario">Horario</label>
+  <select id="horario" formControlName="horario">
+    <option value="">Seleccione un horario</option>
+    <option value="mañana">Mañana</option>
+    <option value="tarde">Tarde</option>
+  </select>
+
+  <button type="submit" [disabled]="formSolicitud.invalid">Enviar solicitud</button>
+
+</form>
