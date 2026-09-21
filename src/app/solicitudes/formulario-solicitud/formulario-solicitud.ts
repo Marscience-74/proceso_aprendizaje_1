@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { SolicitudAcademica } from '../../models/solicitudes';
+import { SolicitudService } from '../../services/solicitud.service'; //linea agregada
 
 @Component({
   selector: 'app-formulario-solicitud',
@@ -13,7 +14,11 @@ export class FormularioSolicitud implements OnInit {
   formSolicitud!: FormGroup;
   solicitudEnviada = false; // controla si mostrar el mensaje de éxito
 
-  constructor(private fb: FormBuilder) {}
+  //constructor(private fb: FormBuilder) {}
+  constructor(
+  private fb: FormBuilder,
+  private solicitudService: SolicitudService
+) {}
 
   ngOnInit(): void {
     this.formSolicitud = this.fb.group({
@@ -40,6 +45,7 @@ export class FormularioSolicitud implements OnInit {
         fechaCreacion: new Date(),
       };
 
+      this.solicitudService.agregarSolicitud(solicitud); // linea agregada
       console.log('Solicitud enviada:', solicitud);
 
       this.formSolicitud.reset(); // limpia todos los campos
