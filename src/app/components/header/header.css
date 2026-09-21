@@ -1,0 +1,20 @@
+.simple-header {
+  background-color: #ffcc6e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e9ecef;
+  text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+
+}
+
+.simple-header h1 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #141414;
+  margin: 0;
+}
