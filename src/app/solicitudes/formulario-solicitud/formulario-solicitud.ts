@@ -11,6 +11,7 @@ import { SolicitudAcademica } from '../../models/solicitudes';
 })
 export class FormularioSolicitud implements OnInit {
   formSolicitud!: FormGroup;
+  solicitudEnviada = false; // controla si mostrar el mensaje de éxito
 
   constructor(private fb: FormBuilder) {}
 
@@ -25,21 +26,24 @@ export class FormularioSolicitud implements OnInit {
     });
   }
 
-onSubmit(): void {
-  if (this.formSolicitud.valid) {
-    const { dni, nombre, correo, curso, carrera, horario } = this.formSolicitud.value;
+  onSubmit(): void {
+    if (this.formSolicitud.valid) {
+      const { dni, nombre, correo, curso, carrera, horario } = this.formSolicitud.value;
 
-    const solicitud: SolicitudAcademica = {
-      id: Date.now(),
-      codigoEstudiante: dni,
-      nombreEstudiante: nombre,
-      tipoTrámite: 'Inscripción a curso',
-      motivo: `Curso: ${curso}, Carrera: ${carrera}, Horario: ${horario}`,
-      estado: 'Pendiente',
-      fechaCreacion: new Date(),
-    };
+      const solicitud: SolicitudAcademica = {
+        id: Date.now(),
+        codigoEstudiante: dni,
+        nombreEstudiante: nombre,
+        tipoTrámite: 'Inscripción a curso',
+        motivo: `Curso: ${curso}, Carrera: ${carrera}, Horario: ${horario}`,
+        estado: 'Pendiente',
+        fechaCreacion: new Date(),
+      };
 
-    console.log('Solicitud enviada:', solicitud);
+      console.log('Solicitud enviada:', solicitud);
+
+      this.formSolicitud.reset(); // limpia todos los campos
+      this.solicitudEnviada = true; // activa el mensaje de éxito
+    }
   }
-}
 }

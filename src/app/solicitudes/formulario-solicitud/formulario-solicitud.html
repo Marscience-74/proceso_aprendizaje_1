@@ -44,3 +44,7 @@
   <button type="submit" [disabled]="formSolicitud.invalid">Enviar solicitud</button>
 
 </form>
+
+<div *ngIf="solicitudEnviada">
+  ✅ Solicitud enviada correctamente.
+</div>

@@ -3,5 +3,4 @@ import { FormularioSolicitud } from './solicitudes/formulario-solicitud/formular
 
 export const routes: Routes = [
   { path: 'nueva-solicitud', component: FormularioSolicitud },
-  { path: '', redirectTo: 'nueva-solicitud', pathMatch: 'full' },
 ];
