@@ -1,23 +1,71 @@
 <section class="data-section">
-    <div class="solicitudes-container">
-        <h2>Listado de Solicitudes (Plantilla)</h2>
 
-        <div class="grid-table">
-            <div class="grid-header">ID</div>
-            <div class="grid-header">Código</div>
-            <div class="grid-header">Estudiante</div>
-            <div class="grid-header">Tipo de Trámite</div>
-            <div class="grid-header">Motivo</div>
-            <div class="grid-header">Estado</div>
-            <div class="grid-header">Fecha</div>
+  <div class="solicitudes-container">
 
-            <div class="grid-row">1</div>
-            <div class="grid-row">U20261001</div>
-            <div class="grid-row">María Gómez</div>
-            <div class="grid-row">Convalidación de Curso</div>
-            <div class="grid-row">Revisión de sílabo de Arquitectura Web.</div>
-            <div class="grid-row"><span class="badge pendiente">Pendiente</span></div>
-            <div class="grid-row">20/09/2026</div>
-        </div>
+    <h2>Listado de Solicitudes</h2>
+
+    <!-- Si no hay solicitudes -->
+    <div *ngIf="solicitudes().length === 0">
+      No existen solicitudes registradas.
     </div>
+
+    <!-- Si existen solicitudes -->
+    <div class="grid-table" *ngIf="solicitudes().length > 0">
+
+      <!-- Cabecera -->
+      <div class="grid-header">ID</div>
+      <div class="grid-header">Código</div>
+      <div class="grid-header">Estudiante</div>
+      <div class="grid-header">Tipo de Trámite</div>
+      <div class="grid-header">Motivo</div>
+      <div class="grid-header">Estado</div>
+      <div class="grid-header">Fecha</div>
+
+      <!-- Filas dinámicas -->
+      <ng-container *ngFor="let solicitud of solicitudes()">
+
+        <div class="grid-row">
+          {{ solicitud.id }}
+        </div>
+
+        <div class="grid-row">
+          {{ solicitud.codigoEstudiante }}
+        </div>
+
+        <div class="grid-row">
+          {{ solicitud.nombreEstudiante }}
+        </div>
+
+        <div class="grid-row">
+          {{ solicitud['tipoTrámite'] }}
+        </div>
+
+        <div class="grid-row">
+          {{ solicitud.motivo }}
+        </div>
+
+        <div class="grid-row">
+          <span
+            class="badge"
+            [ngClass]="{
+              'pendiente': solicitud.estado === 'Pendiente',
+              'en-proceso': solicitud.estado === 'En Proceso',
+              'aprobada': solicitud.estado === 'Aprobada',
+              'rechazada': solicitud.estado === 'Rechazada'
+            }"
+          >
+            {{ solicitud.estado }}
+          </span>
+        </div>
+
+        <div class="grid-row">
+          {{ solicitud.fechaCreacion | date:'dd/MM/yyyy' }}
+        </div>
+
+      </ng-container>
+
+    </div>
+
+  </div>
+
 </section>
