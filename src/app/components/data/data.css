@@ -1,0 +1,79 @@
+.data-section {
+    width: 100%;
+    height: 823px;
+    background-color: white;
+}
+
+.solicitudes-container {
+    max-width: 1100px;
+    margin: 20px auto;
+    font-family: system-ui, -apple-system, sans-serif;
+    padding: 0 15px;
+}
+
+.solicitudes-container h2 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.grid-table {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 1.5fr 1.5fr 2fr 1fr 1fr;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.grid-header {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #495057;
+    padding: 12px 10px;
+    border-bottom: 2px solid #dee2e6;
+    text-align: left;
+}
+
+.grid-row {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    color: #212529;
+    border-bottom: 1px solid #f1f3f5;
+    display: flex;
+    align-items: center;
+}
+
+.grid-table .grid-row:nth-child(even) {
+    background-color: #fafbfc;
+}
+
+.badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.badge.pendiente {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.badge.en-proceso {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.badge.aprobada {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.badge.rechazada {
+    background-color: #f8d7da;
+    color: #721c24;
+}
