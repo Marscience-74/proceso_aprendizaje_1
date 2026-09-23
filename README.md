@@ -3,7 +3,7 @@
 > **Curso:** PROGRAMACION WEB - II  
 > **Código:** 30690  
 > **Evaluación:** PA1 — Proceso de Aprendizaje 1  
-> **Equipo:** Grupo 5  
+> **Equipo:** Grupo 7  
 
 ## 1. Integrantes
 
@@ -23,7 +23,7 @@ La institución necesita una forma estructurada de registrar y visualizar solici
 Desarrollar el frontend Angular tipado de la Plataforma de Gestión de Solicitudes Académicas: registro (formulario reactivo con validaciones), navegación entre vistas, y visualización de solicitudes.
 
 **Solución desarrollada:**  
-Se desarrolló un frontend Angular con TypeScript que permite registrar, listar y visualizar solicitudes académicas. El sistema define un modelo de datos tipado (`SolicitudAcademica`) compartido entre los componentes, un formulario reactivo con validaciones específicas por campo (DNI, nombre, correo institucional) para el registro de nuevas solicitudes, un listado dinámico que refleja en tiempo real las solicitudes ingresadas mediante un servicio centralizado (`SolicitudService`), navegación entre vistas con Angular Router, y un listado de asesores académicos obtenido desde una API REST externa mediante `HttpClient` (`AsesorApiService`), que se presenta junto al listado de solicitudes y maneja sus propios estados de carga y error.
+Se desarrolló un frontend Angular con TypeScript que permite registrar, listar y visualizar solicitudes académicas. El sistema define un modelo de datos tipado (`SolicitudAcademica`) compartido entre los componentes, un formulario reactivo con validaciones específicas por campo (DNI, nombre, correo institucional) para el registro de nuevas solicitudes, un listado dinámico que refleja en tiempo real las solicitudes ingresadas mediante un servicio centralizado (`SolicitudService`), navegación entre vistas con Angular Router, y consumo de una API REST mediante `HttpClient` para obtener u operar sobre datos externos al proyecto.
 
 ## 3. Cómo ejecutar o revisar
 
@@ -40,7 +40,7 @@ npx ng serve
 3. Click en "Ir a nueva solicitud" para navegar al formulario (Actividad 3).
 4. Probar un DNI inválido (ej: menos de 8 dígitos) y confirmar que aparece el mensaje de error.
 5. Completar el formulario con datos válidos y enviar — la nueva solicitud debe aparecer en el listado.
-6. Revisar la sección "Asesores académicos" (debajo del listado de solicitudes): los datos se cargan mediante `HttpClient` desde una API REST externa (`https://jsonplaceholder.typicode.com/users`). El botón "Recargar" repite la petición; puede verificarse en la pestaña Network del navegador.
+6. Verificar el consumo de la API REST (Actividad 4) revisando el servicio con `HttpClient` y su resultado en pantalla.
 
 > No publicar contraseñas, tokens, credenciales ni datos sensibles.
 
@@ -63,7 +63,7 @@ npx ng serve
 
 ## 6. Video de exposición
 
-**Video público de YouTube:** [PEGAR AQUÍ EL ENLACE]
+**Video público de YouTube:** https://www.youtube.com/watch?v=FSeIUrorSxs
 
 Todos los integrantes deben participar en la exposición con sus cámaras prendidas y explicar el procedimiento, la solución desarrollada y las decisiones tomadas.
 
@@ -72,6 +72,7 @@ Todos los integrantes deben participar en la exposición con sus cámaras prendi
 - El uso de TypeScript y formularios reactivos permitió validar datos de forma estricta antes de que lleguen a cualquier backend futuro.
 - La integración entre actividades independientes (formulario, modelo, listado, consumo de API) requirió coordinación de equipo para unificar el modelo de datos (`SolicitudAcademica`) y resolver conflictos de integración entre ramas de trabajo.
 - El trabajo modular por actividad permitió avanzar en paralelo, aunque evidenció la necesidad de definir el alcance del dominio (qué es una "solicitud académica") desde el inicio del proyecto para evitar reajustes posteriores.
+- En la Actividad 2 se logró separar la gestión de los datos pasando de trabajar con información estática a utilizar datos dinámicos mediante data binding y directivas de Angular. Con ello se obtiene una estructura más modular, reutilizable y mantenible.
 
 ---
 
