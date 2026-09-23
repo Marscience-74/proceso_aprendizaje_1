@@ -1,0 +1,12 @@
+export interface AsesorAcademico {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+  company: {
+    name: string;
+  };
+  address: {
+    city: string;
+  };
+}

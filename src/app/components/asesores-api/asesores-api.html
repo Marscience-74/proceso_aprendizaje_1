@@ -1,0 +1,46 @@
+<section class="api-section">
+
+  <div class="api-header">
+    <h2>Asesores académicos</h2>
+    <button type="button" (click)="cargarAsesores()">Recargar</button>
+  </div>
+
+  <p class="api-hint">
+    Directorio de asesores disponibles para la revisión de solicitudes.
+  </p>
+
+  <div *ngIf="cargando()" class="api-estado">
+    Cargando asesores...
+  </div>
+
+  <div *ngIf="!cargando() && error()" class="api-estado api-error">
+    {{ error() }}
+  </div>
+
+  <div class="grid-table" *ngIf="!cargando() && !error() && asesores().length > 0">
+
+    <div class="grid-header">ID</div>
+    <div class="grid-header">Nombre</div>
+    <div class="grid-header">Usuario</div>
+    <div class="grid-header">Correo</div>
+    <div class="grid-header">Institución</div>
+    <div class="grid-header">Ciudad</div>
+
+    <ng-container *ngFor="let asesor of asesores()">
+
+      <div class="grid-row">{{ asesor.id }}</div>
+      <div class="grid-row">{{ asesor.name }}</div>
+      <div class="grid-row">{{ asesor.username }}</div>
+      <div class="grid-row">{{ asesor.email }}</div>
+      <div class="grid-row">{{ asesor.company.name }}</div>
+      <div class="grid-row">{{ asesor.address.city }}</div>
+
+    </ng-container>
+
+  </div>
+
+  <div *ngIf="!cargando() && !error() && asesores().length === 0" class="api-estado">
+    No se encontraron asesores.
+  </div>
+
+</section>

@@ -4,9 +4,10 @@ import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { ControlFlow } from './components/control-flow/control-flow';
 import { Data } from './components/data/data';
+import { AsesoresApi } from './components/asesores-api/asesores-api';
 
 @Component({
-  imports: [RouterOutlet, RouterLink, Header, Footer, ControlFlow, Data],
+  imports: [RouterOutlet, RouterLink, Header, Footer, ControlFlow, Data, AsesoresApi],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',

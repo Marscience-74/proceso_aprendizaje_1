@@ -13,3 +13,11 @@ main a[routerLink] {
 main a[routerLink]:hover {
   background-color: #1f618d;
 }
+
+.datos-generales {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  background-color: white;
+  padding-bottom: 20px;
+}
