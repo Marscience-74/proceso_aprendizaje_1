@@ -59,7 +59,7 @@ npx ng serve
 | Leonardo Alonso Guillén Zúñiga | Alta | Alta | Alta | Sí | Estructura inicial del proyecto Angular, commits en `models/solicitudes.ts` |
 | Edwin Montoya Romero | Alta | Alta | Alta | Sí | Rama `actividad-2-edwin`, `SolicitudService`, `app-data` |
 | Mariano Guerrero Barrueto | Alta | Alta | Alta | Sí | Commits en `formulario-solicitud/`, `app.routes.ts`, `app.html`; merge de la rama `actividad-2-edwin` a `main` |
-| Deiner Maluquis Quispe | Alta | Alta | Alta | Sí | Servicio Angular con `HttpClient` para consumo de API REST |
+| Deiner Maluquis Quispe | Alta | Alta | Alta | No | Servicio Angular con `HttpClient` para consumo de API REST |
 
 ## 6. Video de exposición
 
